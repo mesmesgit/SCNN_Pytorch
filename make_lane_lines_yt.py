@@ -64,8 +64,9 @@ def main():
     #
     # args = parse_args()
     #  CCT007-Scene-005 has 153 frames
-    for fno in range(1, 154):
-        img_path = rootPath + "imdata/video/processed/CCT007/CCT007-Scene-005/Run/rgb{0:06d}.png".format(fno)
+    #  CCT007-Scene-009 has 218 frames
+    for fno in range(1, 219):
+        img_path = rootPath + "imdata/video/processed/CCT007/CCT007-Scene-009/Run/rgb{0:06d}.png".format(fno)
         weight_path = "experiments/exp10/exp10_best.pth"
 
         img = cv2.imread(img_path)
@@ -101,7 +102,7 @@ def main():
             img = cv2.polylines(img, np.int32([np.array(x)]), 0, (0, 0, 255), thickness=3)
         #
         img_rsz = cv2.resize(img, (1280, 720), interpolation = cv2.INTER_LANCZOS4)
-        cv2.imwrite(rootPath + "imdata/video/processed/CCT007/CCT007-Scene-005/Lane/lin{0:06d}.png".format(fno), img_rsz)
+        cv2.imwrite(rootPath + "imdata/video/processed/CCT007/CCT007-Scene-009/Lane/lin{0:06d}.png".format(fno), img_rsz)
         #
         print("frame {} is complete.".format(fno))
         #
