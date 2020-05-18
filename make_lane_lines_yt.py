@@ -1,3 +1,4 @@
+import os
 import argparse
 import cv2
 import torch
@@ -62,7 +63,7 @@ def main():
         exit()
     #
     # args = parse_args()
-    #  CCT007-Scene-005 has 153 frames 
+    #  CCT007-Scene-005 has 153 frames
     for fno in range(1, 154):
         img_path = rootPath + "imdata/video/processed/CCT007/CCT007-Scene-005/Run/rgb{0:06d}.png".format(fno)
         weight_path = "experiments/exp10/exp10_best.pth"
