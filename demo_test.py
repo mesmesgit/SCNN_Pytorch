@@ -57,7 +57,7 @@ def main():
     print("Lane Lines:")
     for x in getLane.prob2lines_CULane(seg_pred, exist):
         print(x)
-        img = cv2.polylines(img, x, isClosed=0, color=[0, 0, 255])
+        img = cv2.polylines(img, np.array(x), isClosed=0, color=[0, 0, 255])
     #
     cv2.imwrite("demo/demo_result2.png", img)
 
