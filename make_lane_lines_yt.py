@@ -100,7 +100,8 @@ def main():
             # print(x)
             img = cv2.polylines(img, np.int32([np.array(x)]), 0, (0, 0, 255), thickness=3)
         #
-        cv2.imwrite(rootPath + "imdata/video/processed/CCT007/CCT007-Scene-005/Lane/lin{0:06d}.png".format(fno), img)
+        img_rsz = cv2.resize(img, (1280, 720), interpolation = cv2.INTER_LANCZOS4)
+        cv2.imwrite(rootPath + "imdata/video/processed/CCT007/CCT007-Scene-005/Lane/lin{0:06d}.png".format(fno), img_rsz)
         #
         print("frame {} is complete.".format(fno))
         #
