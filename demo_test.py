@@ -53,9 +53,14 @@ def main():
     img = cv2.addWeighted(src1=lane_img, alpha=0.8, src2=img, beta=1., gamma=0.)
     cv2.imwrite("demo/demo_result.jpg", img)
 
+    print(" ")
+    print("Lane Lines:")
     for x in getLane.prob2lines_CULane(seg_pred, exist):
         print(x)
 
+    print(" ")
+    print("exist: ", exist)
+    print("exist_pred: ", exist_pred)
     if args.visualize:
         print([1 if exist_pred[0, i] > 0.5 else 0 for i in range(4)])
         cv2.imshow("", img)
