@@ -65,7 +65,8 @@ def main():
     # args = parse_args()
     #  CCT007-Scene-005 has 153 frames
     #  CCT007-Scene-009 has 218 frames
-    for fno in range(1, 219):
+    #  CCT007-Scene-045 has 665 frames
+    for fno in range(1, 666):
         img_path = rootPath + "imdata/video/processed/CCT007/CCT007-Scene-045/Run/rgb{0:06d}.png".format(fno)
         weight_path = "experiments/exp10/exp10_best.pth"
 
